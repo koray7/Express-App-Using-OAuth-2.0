@@ -6,11 +6,26 @@
   <body>
     <nav>
       <ul>
+        <% if(!isAuthenticated) { %>
         <li><a href="/login/">Login</a></li>
-        <li><a href="/logout/">LogOut</a></li>
+        <% } else { %>
+        <li><a href="/logout/">Logout</a></li>
+        <% } %>
       </ul>
     </nav>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <% if(user) { %>
+    <div class="profileInfo">
+      <img
+        src="https://i.ibb.co/LC6DgdG/Koray-Adams.jpg"
+        alt="Koray-Adams"
+        border="0"
+      />
+      <p class="name">
+        <%= user.email.charAt(0).toUpperCase() + user.email.slice(1) %>
+      </p>
+    </div>
+    <% } %>
   </body>
 </html>
