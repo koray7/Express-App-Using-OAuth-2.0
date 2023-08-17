@@ -17,9 +17,10 @@ app.use(cors(corsOptions));
 const checkJwt = auth();
 
 app.get("/", function (req, res) {
-  res.json({
-    message: "Welcome to OAuth 2.0 Practice",
-  });
+  res.sendFile(__dirname + "/index.html");
+  // res.json({
+  //   message: "Welcome to OAuth 2.0 Practice",
+  // });
 });
 
 app.get("/api/public", function (req, res) {
