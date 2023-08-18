@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><% title %></title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <% include ("partials/nav") %>
+    <h1><%= title %></h1>
+    <p>This is '<%= name %>'</p>
+    <% if(user) { %>
+    <div class="profileInfo">
+      <img
+        src="https://i.ibb.co/LC6DgdG/Koray-Adams.jpg"
+        alt="Koray-Adams"
+        border="0"
+      />
+      <p class="name">
+        <%= user.email.charAt(0).toUpperCase() + user.email.slice(1) %>
+      </p>
+    </div>
+    <% } %>
+    <pre><%= JSON.stringify(data, null, 2) %></pre>
+    <li><a href="/logout">Logout</a></li>
+  </body>
+</html>

@@ -4,28 +4,8 @@
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
-    <nav>
-      <ul>
-        <% if(!isAuthenticated) { %>
-        <li><a href="/login/">Login</a></li>
-        <% } else { %>
-        <li><a href="/logout/">Logout</a></li>
-        <% } %>
-      </ul>
-    </nav>
+    <%- include ("partials/nav") %>
     <h1><%= title %></h1>
-    <p>My name is '<%= name %>'</p>
-    <% if(user) { %>
-    <div class="profileInfo">
-      <img
-        src="https://i.ibb.co/LC6DgdG/Koray-Adams.jpg"
-        alt="Koray-Adams"
-        border="0"
-      />
-      <p class="name">
-        <%= user.email.charAt(0).toUpperCase() + user.email.slice(1) %>
-      </p>
-    </div>
-    <% } %>
+    <p>Hey! My name is '<%= name %>'</p>
   </body>
 </html>
