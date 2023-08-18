@@ -17,7 +17,7 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/stylesheets"));
 app.use(auth(config));
 app.use("/", indexRouter);
 
